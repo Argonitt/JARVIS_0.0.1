@@ -1,0 +1,40 @@
+[package]
+name = "jarvis-gui"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+edition.workspace = true
+
+[dependencies]
+jarvis-core = { path = "../jarvis-core", default-features = false }
+tauri = { version = "2", features = [] }
+tauri-plugin-shell = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+
+# JARVIS Audio Plugin for Android
+tauri-plugin-jarvis-audio = { path = "../../plugins/tauri-plugin-jarvis-audio", optional = true }
+
+peak_alloc = "0.3.0"
+systemstat = "0.2"
+lazy_static = "1.4"
+sysinfo.workspace = true
+
+once_cell.workspace = true
+log.workspace = true
+simple-log = "2.4"
+serde.workspace = true
+serde_json.workspace = true
+platform-dirs.workspace = true
+parking_lot.workspace = true
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+# Android feature
+android = ["jarvis-core/android", "tauri-plugin-jarvis-audio"]
