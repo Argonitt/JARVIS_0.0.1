@@ -1,0 +1,20 @@
+[package]
+name = "tauri-plugin-jarvis-audio"
+version = "0.1.0"
+edition = "2021"
+authors = ["JARVIS Android Team"]
+description = "Tauri plugin for Android audio recording"
+
+[dependencies]
+tauri = { version = "2.0", features = ["wry"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+once_cell = "1.19"
+parking_lot = "0.12"
+log = "0.4"
+
+[target.'cfg(target_os = "android")'.dependencies]
+tauri-plugin = { version = "2.0", features = ["android"] }
+
+[build-dependencies]
+tauri-plugin = { version = "2.0", features = ["build"] }
