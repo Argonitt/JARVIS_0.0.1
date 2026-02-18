@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">JARVIS</string>
-    <string name="app_description">Offline Voice Assistant</string>
-    <string name="permission_required">Permission Required</string>
-    <string name="microphone_permission_message">JARVIS needs microphone access to hear your voice commands.</string>
-    <string name="grant_permission">Grant Permission</string>
-    <string name="cancel">Cancel</string>
-</resources>
